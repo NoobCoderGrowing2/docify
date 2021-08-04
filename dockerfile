@@ -2,5 +2,6 @@
   LABEL description="A9 Documentation."
   WORKDIR /docs
   RUN npm install -g docsify-cli@latest
-  EXPOSE 3000/tcp
-  ENTRYPOINT docsify serve .
+  COPY ./docs /docs
+  EXPOSE 4000/tcp
+  ENTRYPOINT docsify serve --port 4000 
